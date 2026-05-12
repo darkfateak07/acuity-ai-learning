@@ -10,7 +10,19 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SignupRouteImport } from './routes/signup'
+import { Route as SettingsRouteImport } from './routes/settings'
+import { Route as PricingRouteImport } from './routes/pricing'
+import { Route as ParentRouteImport } from './routes/parent'
+import { Route as ModulesRouteImport } from './routes/modules'
 import { Route as LoginRouteImport } from './routes/login'
+import { Route as FaqRouteImport } from './routes/faq'
+import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as AssessmentsRouteImport } from './routes/assessments'
+import { Route as AnalyticsRouteImport } from './routes/analytics'
+import { Route as AiTutorRouteImport } from './routes/ai-tutor'
+import { Route as AdminRouteImport } from './routes/admin'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
 const SignupRoute = SignupRouteImport.update({
@@ -18,9 +30,69 @@ const SignupRoute = SignupRouteImport.update({
   path: '/signup',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PricingRoute = PricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ParentRoute = ParentRouteImport.update({
+  id: '/parent',
+  path: '/parent',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ModulesRoute = ModulesRouteImport.update({
+  id: '/modules',
+  path: '/modules',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LoginRoute = LoginRouteImport.update({
   id: '/login',
   path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AssessmentsRoute = AssessmentsRouteImport.update({
+  id: '/assessments',
+  path: '/assessments',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AnalyticsRoute = AnalyticsRouteImport.update({
+  id: '/analytics',
+  path: '/analytics',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AiTutorRoute = AiTutorRouteImport.update({
+  id: '/ai-tutor',
+  path: '/ai-tutor',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -31,31 +103,125 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/admin': typeof AdminRoute
+  '/ai-tutor': typeof AiTutorRoute
+  '/analytics': typeof AnalyticsRoute
+  '/assessments': typeof AssessmentsRoute
+  '/contact': typeof ContactRoute
+  '/dashboard': typeof DashboardRoute
+  '/faq': typeof FaqRoute
   '/login': typeof LoginRoute
+  '/modules': typeof ModulesRoute
+  '/parent': typeof ParentRoute
+  '/pricing': typeof PricingRoute
+  '/settings': typeof SettingsRoute
   '/signup': typeof SignupRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/admin': typeof AdminRoute
+  '/ai-tutor': typeof AiTutorRoute
+  '/analytics': typeof AnalyticsRoute
+  '/assessments': typeof AssessmentsRoute
+  '/contact': typeof ContactRoute
+  '/dashboard': typeof DashboardRoute
+  '/faq': typeof FaqRoute
   '/login': typeof LoginRoute
+  '/modules': typeof ModulesRoute
+  '/parent': typeof ParentRoute
+  '/pricing': typeof PricingRoute
+  '/settings': typeof SettingsRoute
   '/signup': typeof SignupRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/admin': typeof AdminRoute
+  '/ai-tutor': typeof AiTutorRoute
+  '/analytics': typeof AnalyticsRoute
+  '/assessments': typeof AssessmentsRoute
+  '/contact': typeof ContactRoute
+  '/dashboard': typeof DashboardRoute
+  '/faq': typeof FaqRoute
   '/login': typeof LoginRoute
+  '/modules': typeof ModulesRoute
+  '/parent': typeof ParentRoute
+  '/pricing': typeof PricingRoute
+  '/settings': typeof SettingsRoute
   '/signup': typeof SignupRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/login' | '/signup'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/admin'
+    | '/ai-tutor'
+    | '/analytics'
+    | '/assessments'
+    | '/contact'
+    | '/dashboard'
+    | '/faq'
+    | '/login'
+    | '/modules'
+    | '/parent'
+    | '/pricing'
+    | '/settings'
+    | '/signup'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/login' | '/signup'
-  id: '__root__' | '/' | '/login' | '/signup'
+  to:
+    | '/'
+    | '/about'
+    | '/admin'
+    | '/ai-tutor'
+    | '/analytics'
+    | '/assessments'
+    | '/contact'
+    | '/dashboard'
+    | '/faq'
+    | '/login'
+    | '/modules'
+    | '/parent'
+    | '/pricing'
+    | '/settings'
+    | '/signup'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/admin'
+    | '/ai-tutor'
+    | '/analytics'
+    | '/assessments'
+    | '/contact'
+    | '/dashboard'
+    | '/faq'
+    | '/login'
+    | '/modules'
+    | '/parent'
+    | '/pricing'
+    | '/settings'
+    | '/signup'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  AdminRoute: typeof AdminRoute
+  AiTutorRoute: typeof AiTutorRoute
+  AnalyticsRoute: typeof AnalyticsRoute
+  AssessmentsRoute: typeof AssessmentsRoute
+  ContactRoute: typeof ContactRoute
+  DashboardRoute: typeof DashboardRoute
+  FaqRoute: typeof FaqRoute
   LoginRoute: typeof LoginRoute
+  ModulesRoute: typeof ModulesRoute
+  ParentRoute: typeof ParentRoute
+  PricingRoute: typeof PricingRoute
+  SettingsRoute: typeof SettingsRoute
   SignupRoute: typeof SignupRoute
 }
 
@@ -68,11 +234,95 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SignupRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pricing': {
+      id: '/pricing'
+      path: '/pricing'
+      fullPath: '/pricing'
+      preLoaderRoute: typeof PricingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/parent': {
+      id: '/parent'
+      path: '/parent'
+      fullPath: '/parent'
+      preLoaderRoute: typeof ParentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/modules': {
+      id: '/modules'
+      path: '/modules'
+      fullPath: '/modules'
+      preLoaderRoute: typeof ModulesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/login': {
       id: '/login'
       path: '/login'
       fullPath: '/login'
       preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/assessments': {
+      id: '/assessments'
+      path: '/assessments'
+      fullPath: '/assessments'
+      preLoaderRoute: typeof AssessmentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/analytics': {
+      id: '/analytics'
+      path: '/analytics'
+      fullPath: '/analytics'
+      preLoaderRoute: typeof AnalyticsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ai-tutor': {
+      id: '/ai-tutor'
+      path: '/ai-tutor'
+      fullPath: '/ai-tutor'
+      preLoaderRoute: typeof AiTutorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -87,7 +337,19 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  AdminRoute: AdminRoute,
+  AiTutorRoute: AiTutorRoute,
+  AnalyticsRoute: AnalyticsRoute,
+  AssessmentsRoute: AssessmentsRoute,
+  ContactRoute: ContactRoute,
+  DashboardRoute: DashboardRoute,
+  FaqRoute: FaqRoute,
   LoginRoute: LoginRoute,
+  ModulesRoute: ModulesRoute,
+  ParentRoute: ParentRoute,
+  PricingRoute: PricingRoute,
+  SettingsRoute: SettingsRoute,
   SignupRoute: SignupRoute,
 }
 export const routeTree = rootRouteImport
