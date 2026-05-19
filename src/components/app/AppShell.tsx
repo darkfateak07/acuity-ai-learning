@@ -19,34 +19,34 @@ export function AppShell({ title, children }: { title: string; children: React.R
   const path = useRouterState({ select: (s) => s.location.pathname });
   return (
     <div className="min-h-screen flex">
-      <aside className="hidden lg:flex w-64 flex-col border-r border-border/60 glass-strong p-4">
+      <aside className="hidden lg:flex w-64 flex-col border-r-2 border-primary/20 bg-sidebar p-4">
         <Link to="/" className="flex items-center gap-2 mb-8 px-2 pt-1">
-          <div className="h-8 w-8 rounded-lg bg-gradient-primary grid place-items-center glow-primary">
-            <Sparkles className="h-4 w-4 text-primary-foreground" />
+          <div className="h-10 w-10 rounded-full bg-gradient-primary grid place-items-center glow-primary">
+            <Sparkles className="h-5 w-5 text-primary-foreground" />
           </div>
-          <span className="font-display text-lg font-semibold">Acuity<span className="text-gradient">.</span></span>
+          <span className="font-display text-lg font-bold text-gradient">Acuity</span>
         </Link>
-        <nav className="space-y-1 flex-1">
+        <nav className="space-y-2 flex-1">
           {items.map((i) => {
             const active = path === i.to;
             return (
               <Link
                 key={i.to}
                 to={i.to}
-                className={`flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition ${
-                  active ? "bg-white/10 text-foreground" : "text-muted-foreground hover:text-foreground hover:bg-white/5"
+                className={`flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-medium transition ${
+                  active ? "bg-gradient-primary text-primary-foreground shadow-lg" : "text-foreground hover:bg-primary/10"
                 }`}
               >
-                <i.icon className="h-4 w-4" />
+                <i.icon className="h-5 w-5" />
                 {i.label}
-                {active && <span className="ml-auto h-1.5 w-1.5 rounded-full bg-accent" />}
+                {active && <span className="ml-auto h-2 w-2 rounded-full bg-primary-foreground" />}
               </Link>
             );
           })}
         </nav>
-        <div className="glass rounded-xl p-3 mt-4">
-          <div className="flex items-center gap-2 mb-2">
-            <div className="h-8 w-8 rounded-full bg-gradient-primary grid place-items-center text-xs font-semibold">AC</div>
+        <div className="glass rounded-2xl p-4 mt-4">
+          <div className="flex items-center gap-3 mb-3">
+            <div className="h-10 w-10 rounded-full bg-gradient-primary grid place-items-center text-xs font-bold text-primary-foreground">AC</div>
             <div className="text-xs">
               <div className="font-medium">Aria Chen</div>
               <div className="text-muted-foreground">Grade 11</div>

@@ -36,25 +36,25 @@ export function Navbar() {
     >
       <div className="mx-auto max-w-7xl px-4">
         <div
-          className={`flex items-center justify-between rounded-2xl px-4 md:px-6 py-3 transition-all duration-500 ${
-            scrolled ? "glass-strong shadow-elevated" : "glass"
+          className={`flex items-center justify-between rounded-full px-6 md:px-8 py-3 transition-all duration-500 ${
+            scrolled ? "glass-strong shadow-lg" : "glass"
           }`}
         >
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="relative h-8 w-8 rounded-lg bg-gradient-primary grid place-items-center glow-primary">
-              <Sparkles className="h-4 w-4 text-primary-foreground" />
+            <div className="relative h-10 w-10 rounded-full bg-gradient-primary grid place-items-center glow-primary group-hover:scale-110 transition-transform">
+              <Sparkles className="h-5 w-5 text-primary-foreground" />
             </div>
-            <span className="font-display text-lg font-semibold tracking-tight">
-              Acuity<span className="text-gradient">.</span>
+            <span className="font-display text-xl font-bold text-foreground">
+              <span className="text-gradient">Acuity</span>
             </span>
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-1">
+          <nav className="hidden lg:flex items-center gap-2">
             {links.map((l) => (
               <a
                 key={l.label}
                 href={l.to}
-                className="px-3 py-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-white/5"
+                className="px-4 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors rounded-full hover:bg-primary/10"
               >
                 {l.label}
               </a>
@@ -71,27 +71,27 @@ export function Navbar() {
           </div>
 
           <button
-            className="lg:hidden p-2 rounded-md hover:bg-white/5"
+            className="lg:hidden p-2 rounded-full hover:bg-primary/10 transition-colors"
             onClick={() => setOpen(!open)}
             aria-label="Menu"
           >
-            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
 
         {open && (
-          <div className="lg:hidden mt-2 glass-strong rounded-2xl p-4 space-y-1">
+          <div className="lg:hidden mt-3 glass-strong rounded-3xl p-4 space-y-2">
             {links.map((l) => (
               <a
                 key={l.label}
                 href={l.to}
                 onClick={() => setOpen(false)}
-                className="block px-3 py-2 text-sm text-muted-foreground hover:text-foreground rounded-md hover:bg-white/5"
+                className="block px-4 py-2 text-sm font-medium text-foreground rounded-full hover:bg-primary/15"
               >
                 {l.label}
               </a>
             ))}
-            <div className="pt-2 flex gap-2">
+            <div className="pt-3 flex gap-2">
               <Button asChild variant="ghost" size="sm" className="flex-1">
                 <Link to="/login">Login</Link>
               </Button>
