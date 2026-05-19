@@ -233,4 +233,7 @@
     0%, 92%, 100% { transform: scaleY(1); }
     94%, 96% { transform: scaleY(0.05); }
   }
+  .mascot-root { cursor: pointer; display: inline-block; position: relative; }
+  .mascot-confetti { position: absolute; left: 50%; top: 30%; width: 1px; height: 1px; pointer-events: none; }
+  .confetti-dot { position: absolute; left: 0; top: 0; width: 10px; height: 10px; border-radius: 2px; display: block; }
 }
