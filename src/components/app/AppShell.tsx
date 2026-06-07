@@ -1,6 +1,6 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import {
-  LayoutDashboard, Bot, BookOpen, FileCheck, BarChart3, Users, Building2, Settings, Sparkles, LogOut, Bell,
+  LayoutDashboard, Bot, BookOpen, FileCheck, BarChart3, Users, Building2, Settings, LogOut, Bell,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BrandLogo } from "@/components/site/BrandLogo";
@@ -22,8 +22,7 @@ export function AppShell({ title, children }: { title: string; children: React.R
     <div className="min-h-screen flex">
       <aside className="hidden lg:flex w-64 flex-col border-r-2 border-primary/20 bg-sidebar p-4">
         <Link to="/" className="flex items-center gap-2 mb-8 px-2 pt-1">
-          <BrandLogo compact showWordmark={false} />
-          <span className="font-display text-lg font-semibold tracking-[0.16em] text-primary">ACUITY</span>
+          <BrandLogo className="h-10 w-auto max-w-[11rem]" />
         </Link>
         <nav className="space-y-2 flex-1">
           {items.map((i) => {

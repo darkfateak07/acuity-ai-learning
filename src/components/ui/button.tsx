@@ -9,15 +9,15 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground shadow-lg hover:bg-primary/90 hover:shadow-xl hover:scale-105",
+        default: "bg-primary text-primary-foreground shadow-md hover:bg-primary/90 hover:shadow-lg hover:scale-[1.03] transition-all duration-200",
         destructive: "bg-destructive text-destructive-foreground shadow-md hover:bg-destructive/90",
         outline:
-          "border-2 border-primary bg-background shadow-md hover:bg-primary/10 hover:text-foreground",
-        secondary: "bg-secondary text-secondary-foreground shadow-lg hover:bg-secondary/80 hover:shadow-xl",
-        ghost: "hover:bg-primary/15 hover:text-foreground rounded-full transition-all",
+          "border border-primary/30 bg-background hover:bg-primary/8 hover:border-primary/50 text-primary transition-all",
+        secondary: "bg-secondary text-secondary-foreground shadow-md hover:bg-secondary/85 hover:shadow-lg transition-all",
+        ghost: "hover:bg-primary/10 hover:text-primary text-foreground transition-all",
         link: "text-primary underline-offset-4 hover:underline font-semibold",
-        hero: "bg-gradient-primary text-primary-foreground shadow-[0_0_30px_-5px_var(--glow)] hover:shadow-[0_0_50px_-5px_var(--glow)] hover:scale-110 transition-all duration-300",
-        glass: "glass text-foreground hover:bg-white/20 transition-all",
+        hero: "text-white shadow-[0_6px_25px_-8px_rgba(44,95,110,0.5)] hover:shadow-[0_10px_40px_-8px_rgba(44,95,110,0.55)] hover:scale-[1.04] transition-all duration-300",
+        glass: "glass text-foreground hover:bg-white/25 transition-all",
       },
       size: {
         default: "h-10 px-6 py-2",

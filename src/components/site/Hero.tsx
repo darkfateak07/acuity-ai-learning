@@ -1,158 +1,229 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Play, Sparkles, TrendingUp, Brain, Activity } from "lucide-react";
+import { ArrowRight, BookOpen, Brain, TrendingUp, Users, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "@tanstack/react-router";
-import { Mascot } from "./Mascot";
-import { BrandLogo } from "./BrandLogo";
+
+const stats = [
+  { value: "240K+", label: "Active Learners" },
+  { value: "94%", label: "Score Improvement" },
+  { value: "1,200+", label: "Schools Onboard" },
+  { value: "4.9★", label: "App Rating" },
+];
+
+const featurePills = [
+  { icon: Brain, label: "Adaptive AI Engine" },
+  { icon: BookOpen, label: "Curriculum-Aligned" },
+  { icon: TrendingUp, label: "Measurable Growth" },
+];
 
 export function Hero() {
   return (
-    <section className="relative pt-36 pb-24 overflow-hidden">
-      <div className="absolute inset-0 grid-bg pointer-events-none" />
-      <div className="absolute top-20 left-1/2 -translate-x-1/2 h-[500px] w-[900px] rounded-full bg-primary/25 blur-[120px] pointer-events-none" />
+    <section className="relative pt-36 pb-28 overflow-hidden">
+      {/* Background textures */}
+      <div className="absolute inset-0 dot-bg opacity-60 pointer-events-none" />
+      <div className="absolute top-0 left-0 right-0 h-[1px]" style={{ background: "linear-gradient(90deg, transparent, #2C5F6E, transparent)" }} />
+      <div className="absolute top-24 left-1/2 -translate-x-1/2 h-[600px] w-[900px] rounded-full pointer-events-none"
+        style={{ background: "radial-gradient(ellipse, rgba(44,95,110,0.12) 0%, transparent 70%)" }} />
+      <div className="absolute top-24 right-0 h-[400px] w-[400px] rounded-full pointer-events-none"
+        style={{ background: "radial-gradient(ellipse, rgba(184,148,63,0.07) 0%, transparent 70%)" }} />
 
-      <div className="relative mx-auto max-w-7xl px-6 grid lg:grid-cols-2 gap-16 items-center">
-        <Mascot className="absolute -right-8 top-12 hidden lg:block" />
+      <div className="relative mx-auto max-w-7xl px-6">
+        {/* Top label */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="space-y-8"
+          transition={{ duration: 0.5 }}
+          className="flex justify-center mb-10"
         >
-          <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full glass text-xs font-semibold text-primary">
-            <BrandLogo compact showWordmark={false} />
-            <span className="text-foreground tracking-[0.18em] uppercase">Acuity Tutor — Learn Your Way</span>
-          </div>
-
-          <h1 className="font-display text-6xl md:text-7xl lg:text-8xl font-bold leading-[1.05] tracking-tight">
-            Learn with
-            <br />
-            <span className="text-gradient">Your AI Buddy</span>
-          </h1>
-
-          <p className="text-xl text-foreground max-w-xl leading-relaxed font-medium">
-            Get personalized help that's fun and easy to understand! Your AI buddy learns how you learn and grows with you. No more boring lessons — just smart, helpful learning! 🚀
-          </p>
-
-          <div className="flex flex-wrap gap-4">
-            <Button asChild variant="hero" size="lg">
-              <Link to="/signup">
-                Start Your Adventure <ArrowRight className="h-5 w-5" />
-              </Link>
-            </Button>
-            <Button variant="glass" size="lg">
-              <Play className="h-5 w-5" /> See It In Action
-            </Button>
-          </div>
-
-          <div className="flex items-center gap-6 pt-6 text-sm text-foreground">
-            <div className="flex -space-x-3">
-              {[35, 185, 310, 75].map((h) => (
-                <div key={h} className="h-10 w-10 rounded-full border-4 border-background shadow-md"
-                  style={{ background: `oklch(0.4 0.08 ${h})` }} />
-              ))}
-            </div>
-                <span className="font-bold">Join <span className="text-primary">240,000+</span> learners today</span>
-          </div>
+          <span className="section-label">
+            <span className="h-1.5 w-1.5 rounded-full bg-secondary animate-pulse inline-block" />
+            Acuity AI Learning Platform — Where Accuracy Meets Knowledge
+          </span>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.2 }}
-          className="relative h-[560px]"
-        >
-          {/* Main dashboard card */}
-          <div className="absolute inset-0 glass-strong rounded-3xl border-2 border-primary/20 p-6 shadow-xl overflow-hidden">
-            <div className="flex items-center justify-between mb-6">
-              <div className="flex items-center gap-3">
-                <div className="h-10 w-10 rounded-full bg-gradient-primary grid place-items-center">
-                  <Brain className="h-5 w-5 text-primary-foreground" />
-                </div>
-                <div>
-                  <p className="text-base font-bold">Your Learning Journey</p>
-                  <p className="text-sm text-secondary font-semibold">Active · Science Time</p>
-                </div>
-              </div>
-              <div className="flex gap-2">
-                <span className="h-3 w-3 rounded-full bg-accent animate-pulse" />
-                <span className="h-3 w-3 rounded-full bg-secondary" />
-              </div>
-            </div>
+        {/* Hero headline + subtext */}
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="space-y-8"
+          >
+            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.08] tracking-tight">
+              Precision Learning
+              <br />
+              <span className="italic" style={{ color: "#2C5F6E" }}>Powered by AI.</span>
+            </h1>
 
-            {/* Progress chart mock */}
-            <div className="relative h-40 rounded-2xl bg-primary/10 border-2 border-primary/20 p-4 mb-4 overflow-hidden">
-              <div className="text-xs text-primary font-bold uppercase tracking-wider mb-2">Your Progress 📈</div>
-              <svg viewBox="0 0 300 100" className="w-full h-24">
-                <defs>
-                  <linearGradient id="g1" x1="0" x2="0" y1="0" y2="1">
-                    <stop offset="0%" stopColor="oklch(0.28 0.06 205)" stopOpacity="0.4" />
-                    <stop offset="100%" stopColor="oklch(0.28 0.06 205)" stopOpacity="0" />
-                  </linearGradient>
-                </defs>
-                <path d="M0,80 C40,70 60,60 100,50 C140,40 170,55 200,30 C230,10 260,20 300,15 L300,100 L0,100 Z" fill="url(#g1)" />
-                <path d="M0,80 C40,70 60,60 100,50 C140,40 170,55 200,30 C230,10 260,20 300,15"
-                  stroke="oklch(0.28 0.06 205)" strokeWidth="3" fill="none" />
-              </svg>
-            </div>
+            <p className="text-lg text-muted-foreground max-w-lg leading-relaxed">
+              Acuity delivers an adaptive, curriculum-aligned learning experience that identifies each student's unique gaps and strengths — then builds a personalised path to mastery.
+            </p>
 
-            <div className="grid grid-cols-3 gap-3 mb-4">
-              {[
-                { l: "Awesome Score", v: "94% 🌟", c: "oklch(0.74 0.12 74)" },
-                { l: "Streak 🔥", v: "12 days", c: "oklch(0.28 0.06 205)" },
-                { l: "Level Up 🎮", v: "8/10", c: "oklch(0.58 0.12 181)" },
-              ].map((s) => (
-                <div key={s.l} className="rounded-2xl bg-white/40 border-2 border-primary/20 p-3">
-                  <div className="text-xs text-foreground font-bold">{s.l}</div>
-                  <div className="text-lg font-bold" style={{ color: s.c }}>{s.v}</div>
+            {/* Feature pills */}
+            <div className="flex flex-wrap gap-3">
+              {featurePills.map(({ icon: Icon, label }) => (
+                <div key={label} className="flex items-center gap-2 px-4 py-2 rounded-full glass text-sm font-medium" style={{ color: "#2C5F6E" }}>
+                  <Icon className="h-4 w-4" style={{ color: "#B8943F" }} />
+                  {label}
                 </div>
               ))}
             </div>
 
-            {/* AI suggestion */}
-            <div className="rounded-2xl bg-gradient-to-br from-primary/30 to-secondary/20 border-2 border-primary/25 p-4 flex gap-3">
-              <Sparkles className="h-5 w-5 text-primary mt-0.5 shrink-0 flex-shrink-0" />
-              <div>
-                <p className="text-sm font-bold text-foreground">Try This Next 👉</p>
-                <p className="text-sm text-foreground font-medium">Awesome job! Let's practice fractions — you'll get even better! 🎯</p>
-              </div>
+            {/* CTA Buttons */}
+            <div className="flex flex-wrap gap-4 pt-2">
+              <Button asChild size="lg" className="rounded-full px-8 font-semibold text-white shadow-lg transition-transform hover:scale-[1.03]"
+                style={{ background: "linear-gradient(135deg, #2C5F6E, #1A3F4A)", boxShadow: "0 8px 30px -8px rgba(44,95,110,0.45)" }}>
+                <Link to="/signup">
+                  Start Learning Free <ArrowRight className="h-4 w-4 ml-1" />
+                </Link>
+              </Button>
+              <Button asChild size="lg" variant="ghost" className="rounded-full px-8 font-semibold border transition-transform hover:scale-[1.02]"
+                style={{ borderColor: "rgba(44,95,110,0.3)", color: "#2C5F6E" }}>
+                <Link to="/contact">
+                  Request Demo
+                </Link>
+              </Button>
             </div>
-          </div>
 
-          {/* Floating cards */}
-          <motion.div
-            animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute -left-8 top-20 glass-strong rounded-3xl p-4 w-48 shadow-xl border-2 border-secondary/30"
-          >
-            <div className="flex items-center gap-2 mb-3">
-              <div className="h-8 w-8 rounded-full bg-secondary/30 grid place-items-center">
-                <TrendingUp className="h-4 w-4 text-secondary" />
+            {/* Social proof row */}
+            <div className="flex items-center gap-4 pt-2">
+              <div className="flex -space-x-2.5">
+                {["#2C5F6E", "#B8943F", "#3E7D8F", "#5A6E4A"].map((color, i) => (
+                  <div key={i} className="h-9 w-9 rounded-full border-2 border-white shadow-sm grid place-items-center text-white text-xs font-bold"
+                    style={{ background: color }}>
+                    {["A", "B", "C", "D"][i]}
+                  </div>
+                ))}
               </div>
-              <span className="font-bold text-sm text-foreground">You're Crushing It!</span>
+              <p className="text-sm text-muted-foreground">
+                Trusted by <span className="font-semibold" style={{ color: "#2C5F6E" }}>240,000+</span> learners across 50+ countries
+              </p>
             </div>
-            <div className="text-3xl font-bold text-secondary">+24%</div>
-            <div className="text-sm text-foreground font-medium">Better than last week! 🎉</div>
           </motion.div>
 
+          {/* Right side — Dashboard preview */}
           <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-            className="absolute -right-4 bottom-24 glass-strong rounded-3xl p-4 w-52 shadow-xl border-2 border-accent/30"
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.9, delay: 0.25 }}
+            className="relative hidden lg:block"
           >
-            <div className="flex items-center gap-2 mb-3">
-              <div className="h-8 w-8 rounded-full bg-accent/30 grid place-items-center">
-                <Activity className="h-4 w-4 text-accent" />
+            {/* Main card */}
+            <div className="glass-strong rounded-2xl border-gradient shadow-elevated overflow-hidden p-6"
+              style={{ boxShadow: "0 25px 60px -20px rgba(44,95,110,0.25)" }}>
+              {/* Card header */}
+              <div className="flex items-center justify-between mb-6 pb-4"
+                style={{ borderBottom: "1px solid rgba(44,95,110,0.1)" }}>
+                <div className="flex items-center gap-3">
+                  <div className="h-10 w-10 rounded-xl grid place-items-center text-white"
+                    style={{ background: "linear-gradient(135deg, #2C5F6E, #1A3F4A)" }}>
+                    <Brain className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <p className="font-display text-sm font-semibold" style={{ color: "#1A3540" }}>Student Dashboard</p>
+                    <p className="text-xs" style={{ color: "#B8943F" }}>● Live Session · Mathematics</p>
+                  </div>
+                </div>
+                <div className="text-xs font-medium px-3 py-1 rounded-full" style={{ background: "rgba(44,95,110,0.08)", color: "#2C5F6E" }}>
+                  Week 4
+                </div>
               </div>
-              <span className="font-bold text-sm text-foreground">Learning Live Right Now</span>
-            </div>
-            <div className="space-y-2">
-              <div className="h-2 rounded-full bg-primary/20 overflow-hidden">
-                <div className="h-full w-3/4 bg-gradient-primary" />
+
+              {/* Progress chart */}
+              <div className="rounded-xl p-4 mb-4" style={{ background: "rgba(44,95,110,0.05)" }}>
+                <div className="flex justify-between items-center mb-3">
+                  <span className="text-xs font-semibold uppercase tracking-wider" style={{ color: "#6B7E85" }}>Learning Progress</span>
+                  <span className="text-xs font-bold" style={{ color: "#B8943F" }}>+18% this week</span>
+                </div>
+                <svg viewBox="0 0 320 80" className="w-full h-16">
+                  <defs>
+                    <linearGradient id="tealGrad" x1="0" x2="0" y1="0" y2="1">
+                      <stop offset="0%" stopColor="#2C5F6E" stopOpacity="0.3" />
+                      <stop offset="100%" stopColor="#2C5F6E" stopOpacity="0" />
+                    </linearGradient>
+                  </defs>
+                  <path d="M0,70 C30,65 60,55 100,45 C140,35 160,48 200,28 C230,12 270,18 320,10 L320,80 L0,80 Z"
+                    fill="url(#tealGrad)" />
+                  <path d="M0,70 C30,65 60,55 100,45 C140,35 160,48 200,28 C230,12 270,18 320,10"
+                    stroke="#2C5F6E" strokeWidth="2.5" fill="none" strokeLinecap="round" />
+                  <circle cx="320" cy="10" r="4" fill="#B8943F" />
+                </svg>
               </div>
-              <div className="text-sm text-foreground font-bold">42 kids learning together! 👦👧</div>
+
+              {/* Stats row */}
+              <div className="grid grid-cols-3 gap-3 mb-4">
+                {[
+                  { label: "Accuracy", value: "92%", color: "#2C5F6E" },
+                  { label: "Streak", value: "14d", color: "#B8943F" },
+                  { label: "Modules", value: "8/10", color: "#3E7D8F" },
+                ].map((s) => (
+                  <div key={s.label} className="rounded-xl p-3 text-center" style={{ background: "rgba(44,95,110,0.05)" }}>
+                    <div className="text-[10px] font-semibold uppercase tracking-wide text-muted-foreground mb-1">{s.label}</div>
+                    <div className="font-display text-xl font-bold" style={{ color: s.color }}>{s.value}</div>
+                  </div>
+                ))}
+              </div>
+
+              {/* AI suggestion */}
+              <div className="rounded-xl p-4 flex gap-3"
+                style={{ background: "linear-gradient(135deg, rgba(44,95,110,0.08), rgba(184,148,63,0.06))", border: "1px solid rgba(184,148,63,0.2)" }}>
+                <Award className="h-5 w-5 shrink-0 mt-0.5" style={{ color: "#B8943F" }} />
+                <div>
+                  <p className="text-sm font-semibold mb-0.5" style={{ color: "#1A3540" }}>Next Recommendation</p>
+                  <p className="text-xs text-muted-foreground leading-relaxed">Based on your performance, focus on quadratic equations to close the identified gap before your upcoming assessment.</p>
+                </div>
+              </div>
             </div>
+
+            {/* Floating card — users */}
+            <motion.div
+              animate={{ y: [0, -8, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute -left-12 top-20 glass-strong rounded-2xl p-4 w-48 shadow-elevated border-gradient"
+            >
+              <div className="flex items-center gap-2 mb-2">
+                <div className="h-8 w-8 rounded-lg grid place-items-center" style={{ background: "rgba(184,148,63,0.15)" }}>
+                  <Users className="h-4 w-4" style={{ color: "#B8943F" }} />
+                </div>
+                <span className="text-xs font-semibold" style={{ color: "#1A3540" }}>Live Now</span>
+              </div>
+              <div className="font-display text-2xl font-bold" style={{ color: "#2C5F6E" }}>1,847</div>
+              <div className="text-xs text-muted-foreground">students in session</div>
+            </motion.div>
+
+            {/* Floating card — score */}
+            <motion.div
+              animate={{ y: [0, 8, 0] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+              className="absolute -right-8 bottom-20 glass-strong rounded-2xl p-4 w-52 shadow-elevated border-gradient-gold"
+            >
+              <div className="flex items-center gap-2 mb-2">
+                <div className="h-8 w-8 rounded-lg grid place-items-center" style={{ background: "rgba(44,95,110,0.12)" }}>
+                  <TrendingUp className="h-4 w-4" style={{ color: "#2C5F6E" }} />
+                </div>
+                <span className="text-xs font-semibold" style={{ color: "#1A3540" }}>Avg Improvement</span>
+              </div>
+              <div className="font-display text-2xl font-bold" style={{ color: "#B8943F" }}>+24%</div>
+              <div className="text-xs text-muted-foreground">in exam scores after 30 days</div>
+            </motion.div>
           </motion.div>
+        </div>
+
+        {/* Stats bar */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.5 }}
+          className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6"
+        >
+          {stats.map((s, i) => (
+            <div key={s.label} className="glass rounded-2xl p-5 text-center card-hover border-gradient"
+              style={{ animationDelay: `${i * 0.1}s` }}>
+              <div className="stat-number text-3xl mb-1">{s.value}</div>
+              <div className="rule-gold w-12 mx-auto my-2" />
+              <div className="text-xs font-medium text-muted-foreground uppercase tracking-wide">{s.label}</div>
+            </div>
+          ))}
         </motion.div>
       </div>
     </section>
