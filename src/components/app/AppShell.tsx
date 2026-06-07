@@ -3,6 +3,7 @@ import {
   LayoutDashboard, Bot, BookOpen, FileCheck, BarChart3, Users, Building2, Settings, Sparkles, LogOut, Bell,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { BrandLogo } from "@/components/site/BrandLogo";
 
 const items = [
   { icon: LayoutDashboard, label: "Overview", to: "/dashboard" },
@@ -21,10 +22,8 @@ export function AppShell({ title, children }: { title: string; children: React.R
     <div className="min-h-screen flex">
       <aside className="hidden lg:flex w-64 flex-col border-r-2 border-primary/20 bg-sidebar p-4">
         <Link to="/" className="flex items-center gap-2 mb-8 px-2 pt-1">
-          <div className="h-10 w-10 rounded-full bg-gradient-primary grid place-items-center glow-primary">
-            <Sparkles className="h-5 w-5 text-primary-foreground" />
-          </div>
-          <span className="font-display text-lg font-bold text-gradient">Acuity</span>
+          <BrandLogo compact showWordmark={false} />
+          <span className="font-display text-lg font-semibold tracking-[0.16em] text-primary">ACUITY</span>
         </Link>
         <nav className="space-y-2 flex-1">
           {items.map((i) => {

@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Sparkles } from "lucide-react";
+import { BrandLogo } from "./BrandLogo";
 
 export function AuthShell({
   title, subtitle, cta, footer, isSignup = false,
@@ -12,10 +13,8 @@ export function AuthShell({
       <div className="absolute inset-0 grid-bg pointer-events-none opacity-40" />
       <div className="relative flex flex-col justify-center p-8 md:p-16">
         <Link to="/" className="flex items-center gap-2 mb-12">
-          <div className="h-8 w-8 rounded-lg bg-gradient-primary grid place-items-center glow-primary">
-            <Sparkles className="h-4 w-4 text-primary-foreground" />
-          </div>
-          <span className="font-display text-lg font-semibold">Acuity<span className="text-gradient">.</span></span>
+          <BrandLogo compact showWordmark={false} />
+          <span className="font-display text-lg font-semibold tracking-[0.16em] text-primary">ACUITY</span>
         </Link>
 
         <div className="max-w-md w-full mx-auto lg:mx-0">

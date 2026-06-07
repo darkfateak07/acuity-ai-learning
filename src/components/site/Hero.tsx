@@ -3,6 +3,7 @@ import { ArrowRight, Play, Sparkles, TrendingUp, Brain, Activity } from "lucide-
 import { Button } from "@/components/ui/button";
 import { Link } from "@tanstack/react-router";
 import { Mascot } from "./Mascot";
+import { BrandLogo } from "./BrandLogo";
 
 export function Hero() {
   return (
@@ -18,9 +19,9 @@ export function Hero() {
           transition={{ duration: 0.8 }}
           className="space-y-8"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-xs font-semibold text-primary">
-            <span className="h-2 w-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-foreground">✨ Acuity Tutor — Learn Your Way!</span>
+          <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full glass text-xs font-semibold text-primary">
+            <BrandLogo compact showWordmark={false} />
+            <span className="text-foreground tracking-[0.18em] uppercase">Acuity Tutor — Learn Your Way</span>
           </div>
 
           <h1 className="font-display text-6xl md:text-7xl lg:text-8xl font-bold leading-[1.05] tracking-tight">
@@ -48,10 +49,10 @@ export function Hero() {
             <div className="flex -space-x-3">
               {[35, 185, 310, 75].map((h) => (
                 <div key={h} className="h-10 w-10 rounded-full border-4 border-background shadow-md"
-                  style={{ background: `oklch(0.7 0.2 ${h})` }} />
+                  style={{ background: `oklch(0.4 0.08 ${h})` }} />
               ))}
             </div>
-            <span className="font-bold">Join <span className="text-primary">240,000+</span> kids learning today</span>
+                <span className="font-bold">Join <span className="text-primary">240,000+</span> learners today</span>
           </div>
         </motion.div>
 
@@ -70,7 +71,7 @@ export function Hero() {
                 </div>
                 <div>
                   <p className="text-base font-bold">Your Learning Journey</p>
-                  <p className="text-sm text-primary font-semibold">🎯 Active · Science Time</p>
+                  <p className="text-sm text-secondary font-semibold">Active · Science Time</p>
                 </div>
               </div>
               <div className="flex gap-2">
@@ -85,21 +86,21 @@ export function Hero() {
               <svg viewBox="0 0 300 100" className="w-full h-24">
                 <defs>
                   <linearGradient id="g1" x1="0" x2="0" y1="0" y2="1">
-                    <stop offset="0%" stopColor="oklch(0.68 0.25 35)" stopOpacity="0.4" />
-                    <stop offset="100%" stopColor="oklch(0.68 0.25 35)" stopOpacity="0" />
+                    <stop offset="0%" stopColor="oklch(0.28 0.06 205)" stopOpacity="0.4" />
+                    <stop offset="100%" stopColor="oklch(0.28 0.06 205)" stopOpacity="0" />
                   </linearGradient>
                 </defs>
                 <path d="M0,80 C40,70 60,60 100,50 C140,40 170,55 200,30 C230,10 260,20 300,15 L300,100 L0,100 Z" fill="url(#g1)" />
                 <path d="M0,80 C40,70 60,60 100,50 C140,40 170,55 200,30 C230,10 260,20 300,15"
-                  stroke="oklch(0.68 0.25 35)" strokeWidth="3" fill="none" />
+                  stroke="oklch(0.28 0.06 205)" strokeWidth="3" fill="none" />
               </svg>
             </div>
 
             <div className="grid grid-cols-3 gap-3 mb-4">
               {[
-                { l: "Awesome Score", v: "94% 🌟", c: "oklch(0.75 0.2 185)" },
-                { l: "Streak 🔥", v: "12 days", c: "oklch(0.68 0.25 35)" },
-                { l: "Level Up 🎮", v: "8/10", c: "oklch(0.72 0.22 310)" },
+                { l: "Awesome Score", v: "94% 🌟", c: "oklch(0.74 0.12 74)" },
+                { l: "Streak 🔥", v: "12 days", c: "oklch(0.28 0.06 205)" },
+                { l: "Level Up 🎮", v: "8/10", c: "oklch(0.58 0.12 181)" },
               ].map((s) => (
                 <div key={s.l} className="rounded-2xl bg-white/40 border-2 border-primary/20 p-3">
                   <div className="text-xs text-foreground font-bold">{s.l}</div>

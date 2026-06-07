@@ -1,8 +1,9 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Sparkles, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { BrandLogo } from "./BrandLogo";
 
 const links = [
   { label: "Features", to: "/#features" },
@@ -41,11 +42,9 @@ export function Navbar() {
           }`}
         >
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="relative h-10 w-10 rounded-full bg-gradient-primary grid place-items-center glow-primary group-hover:scale-110 transition-transform">
-              <Sparkles className="h-5 w-5 text-primary-foreground" />
-            </div>
-            <span className="font-display text-xl font-bold text-foreground">
-              <span className="text-gradient">Acuity</span>
+            <BrandLogo compact showWordmark={false} className="transition-transform group-hover:scale-105" />
+            <span className="font-display text-xl font-semibold tracking-[0.12em] text-primary">
+              ACUITY
             </span>
           </Link>
 

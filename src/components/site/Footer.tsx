@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Github, Twitter, Linkedin, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { BrandLogo } from "./BrandLogo";
 
 const cols = [
   {
@@ -40,11 +41,9 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-16 grid gap-12 lg:grid-cols-5">
         <div className="lg:col-span-2 space-y-4">
           <Link to="/" className="flex items-center gap-2">
-            <div className="h-8 w-8 rounded-lg bg-gradient-primary grid place-items-center glow-primary">
-              <Sparkles className="h-4 w-4 text-primary-foreground" />
-            </div>
-            <span className="font-display text-lg font-semibold">
-              Acuity<span className="text-gradient">.</span>
+            <BrandLogo compact showWordmark={false} />
+            <span className="font-display text-lg font-semibold tracking-[0.16em] text-primary">
+              ACUITY
             </span>
           </Link>
           <p className="text-sm text-muted-foreground max-w-sm">
